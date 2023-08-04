@@ -1,0 +1,56 @@
+@import "../variables";
+@import '../styles/checkbox';
+
+header{
+    display: flex;
+    flex-direction: column;
+
+    .title-switch{
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: 1.3rem;
+        margin-bottom: 2rem;
+
+        h1{
+            letter-spacing: 15px;
+        }
+    }
+
+    form{
+        width: auto;
+        display: inline-flex;
+        align-items: center;
+        @include listStyle();
+        border-radius: $defaultRadius;
+
+
+        input[type="text"]{
+            margin-left: 15px;
+            border: none;
+            height: 24px;
+            width: 100%;
+            font-size: $defaultFont;
+            outline: none;
+            background: transparent;
+        }
+    }
+}
+
+.error{
+    animation-name: errorBlinks;
+    animation-duration: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+}
+
+.header-checkbox{
+    pointer-events: none;
+}
+
+@keyframes errorBlinks {
+    0%{color: $DarkTextColorHover}
+    100%{color: #DE214C;}
+}

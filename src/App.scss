@@ -1,0 +1,76 @@
+@import "./variables";
+@import "./styles/switch-themes.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    color: $DarkTextColor;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+}
+
+.page{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: url('./assets/bg-desktop-dark.jpg') ,$DarkPrimary;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    position: fixed;
+    top: 8rem;
+    width: 45vw;
+}
+
+.no-tasks{
+    display: flex;
+    @include listStyle($light-theme: false);
+    justify-content: center;
+    align-items: center;
+}
+
+.task-filter{
+    display: flex;
+    justify-content: space-between;
+    .btn{
+        color: $veryDarkGrayishBlue;
+    }
+}
+
+p{
+    width: 100%;
+    text-align: center;
+    margin-top: 2.5rem;
+    color: $veryDarkGrayishBlue;
+}
+
+//mobile
+@media only screen  and (max-width: 375px){
+    .page{
+        background: url('./assets/bg-mobile-dark.jpg') ,$DarkPrimary;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+
+    .container{
+        top: 2.5rem;
+        width: 84vw;
+    }
+    
+    .task-filter{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        .btn{
+            color: $veryDarkGrayishBlue;
+        }
+
+        border-radius: $defaultRadius;
+    }
+}

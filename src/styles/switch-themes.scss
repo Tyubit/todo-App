@@ -1,0 +1,154 @@
+@import "../variables";
+
+.page.light-theme{
+    background: url('./assets/bg-desktop-light.jpg'),$LightPrimary;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    @include listStyle($light-theme:true);
+    
+    *{
+        color: $DarkPrimary;
+    }
+
+    header{
+        h1{
+            color: $LightPrimary;
+        }
+    }
+
+    //todo list style
+    li{
+        border-color: transparent;
+
+        .completed{
+        text-decoration: line-through;
+        color: $LightCompleted;
+        }
+
+        input[type="checkbox"]{
+            border: solid 1px $darkGrayishBlue;
+        }
+
+        input[type="checkbox"]:hover{
+            background-image: linear-gradient($LightPrimary, $LightPrimary), linear-gradient(135deg,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        }
+    }
+
+    .task-control{
+        .task-count{
+            color: $darkGrayishBlue;
+        }
+        
+        //buttons animation colors
+            
+        .task-control-filter, .task-control-clear{
+        color: $darkGrayishBlue;
+        transition: all .2s linear;
+        }
+
+        .active{
+            color:$brightBlue;
+        }
+
+        .task-control-filter:hover{
+            color: $LightTextColor;
+        }
+
+        .task-control-clear:active{
+            color: $brightBlue; 
+        }
+    }
+
+    .task-filter{
+        @include listStyle($light-theme:true);
+    }
+
+    .hint{
+        color: $LightButtonDefaultColor;
+    }
+}
+
+.page.light-theme.mobile{
+    background: url('./assets/bg-mobile-light.jpg'),$LightPrimary;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.page.dark-theme{
+    background: url('./assets/bg-desktop-dark.jpg') ,$DarkPrimary;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+    
+    *{
+        color: $DarkTextColor;
+    }
+
+    header{
+        h1{
+            color: $DarkTextColor;
+        }
+
+        form {
+            @include listStyle($light-theme:false);
+        }
+    }
+
+    //todo list style
+    li{
+        @include listStyle($light-theme:false);
+        border-color: transparent;
+
+        .completed{
+        text-decoration: line-through;
+        color: $veryDarkGrayishBlue;
+        }
+
+        input[type="checkbox"]{
+            border: solid 1px $darkGrayishBlue;
+        }
+
+        input[type="checkbox"]:hover{
+            background-image: linear-gradient($DarkListElementColor, $DarkListElementColor), linear-gradient(135deg,hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+        }
+    }
+
+    .task-control{
+        @include listStyle($light-theme:false);
+        .task-count{
+            color: $veryDarkGrayishBlue;
+        }
+        
+        //buttons animation colors
+        .task-control-filter, .task-control-clear{
+        color: $veryDarkGrayishBlue;
+        transition: all .2s linear;
+        }
+
+        .active{
+            color:$brightBlue;
+        }
+
+        .task-control-filter:hover{
+            color: $DarkTextColorHover;
+        }
+
+        .task-control-clear:active{
+            color: $DarkTextColorHover; 
+        }
+    }
+
+    .task-filter.mobile{
+        @include listStyle($light-theme:false);
+    }
+
+    .hint{
+        color: $veryDarkGrayishBlue;
+    }
+}
+
+.page.dark-theme.mobile{
+    background: url('./assets/bg-mobile-dark.jpg') ,$DarkPrimary;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}

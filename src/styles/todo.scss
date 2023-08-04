@@ -1,0 +1,35 @@
+@import '../variables';
+@import '../styles/checkbox';
+
+li{
+    display:flex;
+    @include listStyle();
+    justify-content: space-between;
+    border-bottom: 1px solid;
+    border-color: $veryDarkGrayishBlue2;
+    cursor: move;
+    
+
+    .left-side{
+        display: inline-flex;
+        .completed{
+        text-decoration: line-through;
+        color: $veryDarkGrayishBlue;
+        }
+
+        .style-checkbox{
+            margin-right: 15px;
+        }
+    }
+
+    img{
+        width: 15px;
+        height: 15px;
+        cursor: pointer;
+    }
+
+    &:first-child{
+        border-top-left-radius: $defaultRadius;
+        border-top-right-radius: $defaultRadius;
+    }
+}

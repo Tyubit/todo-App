@@ -1,0 +1,58 @@
+@import "../_variables";
+
+@mixin btnAnimation($light-theme:false){
+
+    @if $light-theme {
+        .task-control{
+        @include listStyle($light-theme:false);
+        .task-count{
+            color: $veryDarkGrayishBlue;
+        }
+        
+        //buttons animation colors
+        .task-control-filter, .task-control-clear{
+        color: $veryDarkGrayishBlue;
+        transition: all .2s linear;
+        }
+
+        .active{
+            color:$brightBlue;
+        }
+
+        .task-control-filter:hover{
+            color: $DarkTextColorHover;
+        }
+
+        .task-control-clear:active{
+            color: $DarkTextColorHover; 
+        }
+    }
+    }
+
+    @else {
+        background-color: $DarkListElementColor;
+    }
+}
+
+button{
+    border: none;
+    background: transparent;
+    margin: 0 15px;
+    cursor: pointer;
+
+    &:last-child{
+        margin: 0px;
+    }
+}
+
+.task-control-filter:hover{
+    color: $DarkTextColorHover;
+}
+
+.task-control-filter.active{
+    color:$brightBlue;
+}
+
+.task-control-clear:hover{
+    color: $DarkTextColorHover; 
+}

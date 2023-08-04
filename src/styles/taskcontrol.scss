@@ -1,0 +1,13 @@
+@import "../variables";
+
+.task-control{
+    @include listStyle();
+    display: flex;
+    justify-content: space-between;
+    border-bottom-left-radius: $defaultRadius;
+    border-bottom-right-radius: $defaultRadius;
+
+    .task-count{
+        color: $veryDarkGrayishBlue;
+    }
+}
